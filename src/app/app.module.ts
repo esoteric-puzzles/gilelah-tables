@@ -1,18 +1,28 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {TableComponent} from './table/table.component';
+import {TableCellComponent} from './table/table-cell/table-cell.component';
+import {AskModalModule} from './ask-modal/ask-modal.module';
+import {ActionsModule} from './actions/actions.module';
+import {ActionService} from './shared/services/action.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TableComponent,
+    TableCellComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    NgbModule,
+    AskModalModule,
+    ActionsModule
   ],
-  providers: [],
+  providers: [ActionService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
